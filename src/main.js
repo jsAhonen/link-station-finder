@@ -16,12 +16,15 @@ const linkStations = [
 ];
 
 function getOptimalLinkStation(linkStations, position) {
-  return linkStations.reduce((a, b) => {
-    if (calculatePower(a, position) > calculatePower(b, position)) {
-      return a;
-    }
-    return b;
-  });
+  const ls = linkStations
+    .filter((ls) => distance(ls.position, position) < ls.reach)
+    .reduce((a, b) => {
+      if (a && calculatePower(a, position) > calculatePower(b, position)) {
+        return a;
+      }
+      return b;
+    }, null);
+  return ls;
 }
 
 function calculatePower(linkStation, devicePosition) {
@@ -35,7 +38,7 @@ function calculatePower(linkStation, devicePosition) {
 
 function output(linkStations, position) {
   const ls = getOptimalLinkStation(linkStations, position);
-  if (calculatePower(ls, position) <= 0) {
+  if (!ls) {
     return `No link station within reach for point (${position.join(", ")}).`;
   }
   return `Best link station for point (${position.join(

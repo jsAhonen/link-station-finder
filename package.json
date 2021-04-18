@@ -1,0 +1,27 @@
+{
+  "name": "link-stations",
+  "version": "1.0.0",
+  "description": "An app for determining the optimal link station for the device based on distance.",
+  "main": "main.js",
+  "scripts": {
+    "start": "node src/main.js",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "link-stations"
+  },
+  "keywords": [
+    "link-stations",
+    "distance",
+    "coordinates",
+    "math",
+    "spatial",
+    "2d"
+  ],
+  "author": "Jukka Ahonen",
+  "license": "ISC",
+  "dependencies": {
+    "mathjs": "^9.3.2"
+  }
+}

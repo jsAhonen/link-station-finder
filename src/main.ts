@@ -1,5 +1,5 @@
 import { linkStations } from "./data";
-import { output } from "./utils";
+import { output } from "./functions/output";
 
 console.log(output(linkStations, [0, 0]));
 console.log(output(linkStations, [100, 100]));

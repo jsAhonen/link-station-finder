@@ -4,7 +4,8 @@
   "description": "An app for determining the optimal link station for the device based on distance.",
   "main": "main.js",
   "scripts": {
-    "start": "node src/main.js",
+    "start": "tsc && node dist/main.js",
+    "clear": "rm -rf dist",
     "test": "test"
   },
   "repository": {
@@ -21,7 +22,7 @@
   ],
   "author": "Jukka Ahonen",
   "license": "ISC",
-  "dependencies": {
-    "mathjs": "^9.3.2"
+  "devDependencies": {
+    "typescript": "^4.2.4"
   }
 }

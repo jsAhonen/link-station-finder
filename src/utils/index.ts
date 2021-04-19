@@ -1,4 +1,4 @@
-import { LatLng } from "./../types/index";
+import { LatLng, LinkStation } from "./../types/index";
 
 // Calculates the distance between two points with the Pythagorean theorem
 const distance = (a: LatLng, b: LatLng): number => {
@@ -7,7 +7,10 @@ const distance = (a: LatLng, b: LatLng): number => {
   return Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2));
 };
 
-function getLinkStation(linkStations, position) {
+function getLinkStation(
+  linkStations: LinkStation[],
+  position: LatLng
+): LinkStation {
   const ls = linkStations
     .filter((ls) => distance(ls.position, position) < ls.reach)
     .reduce((a, b) => {
@@ -19,8 +22,8 @@ function getLinkStation(linkStations, position) {
   return ls;
 }
 
-function calculatePower(linkStation, devicePosition) {
-  const dist = distance(linkStation.position, devicePosition);
+function calculatePower(linkStation: LinkStation, position: LatLng): number {
+  const dist = distance(linkStation.position, position);
   if (dist > linkStation.reach) {
     return 0;
   }
@@ -28,7 +31,7 @@ function calculatePower(linkStation, devicePosition) {
   return Math.max(power, 0);
 }
 
-export function output(linkStations, position) {
+export function output(linkStations: LinkStation[], position: LatLng) {
   const ls = getLinkStation(linkStations, position);
   if (!ls) {
     return `No link station within reach for point (${position.join(", ")}).`;

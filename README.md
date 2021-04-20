@@ -8,10 +8,12 @@ This application simulates a map of coordinates with link stations and devices o
 
 Link Station Finder is a command line interface program built with Node Package Manager and TypeScript. It assumes that Node.js is installed onto the computer running it.
 
-- After downloading or cloning the project, run `npm install` to install the Node modules.
-- The app is run with `npm start`. This does two things:
-  1. It compiles the TypeScript files into JavaScript.
-  1. It runs the compiled JavaScript code in the dist directory.
+After downloading or cloning the project, run `npm install` to install the Node modules.
+
+The app is run with `npm start`. This does two things:
+
+1. It compiles the TypeScript files into JavaScript.
+1. It runs the compiled JavaScript code in the dist directory.
 
 The app prints on the console indicating the queried position on the coordinates, the coordinates of the link station with the strongest connection, and the power of that connection. Alternatively, if no link stations are within reach, it would indicate that instead.
 

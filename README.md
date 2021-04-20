@@ -13,7 +13,7 @@ After downloading or cloning the project, run `npm install` to install the Node 
 The app is run with `npm start`. This does two things:
 
 1. It compiles the TypeScript files into JavaScript.
-1. It runs the compiled JavaScript code in the dist directory.
+1. It runs the compiled JavaScript code in the `/dist` directory.
 
 The app prints on the console indicating the queried position on the coordinates, the coordinates of the link station with the strongest connection, and the power of that connection. Alternatively, if no link stations are within reach, it would indicate that instead.
 
@@ -60,6 +60,7 @@ Calculates the distance between point a and point b based on the Pythagorean The
 Returns the link station with the optimal power available for the given position, or null if no link station is within reach.
 
 **calculatePower**: function(linkStation: LinkStation, position: LatLng): number
+
 Returns a number representing the power of connection between the given link station and the position. Always returns a positive number or zero.
 
 #### Outputs

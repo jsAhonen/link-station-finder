@@ -70,7 +70,9 @@ Returns a number representing the power of connection between the given link sta
 Logs output to the console. There are two options:
 
 In case there are link stations available:
-"Best link station for point (x,y) is at point (x,y) with power z."
+
+`"Best link station for point (x,y) is at point (x,y) with power z."`
 
 In case there are no link stations available:
-No link station within reach for point (x, y).
+
+`"No link station within reach for point (x, y)."`

@@ -8,7 +8,7 @@ export function distance(a: LatLng, b: LatLng): number {
   return Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2));
 }
 
-export function getLinkStation(position: LatLng): LinkStation {
+export function getLinkStation(position: LatLng): LinkStation | null {
   return linkStations
     .filter((ls) => distance(ls.position, position) < ls.reach)
     .reduce((a, b) => {

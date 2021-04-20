@@ -1,15 +1,21 @@
-import { LatLng, LinkStation } from "../types/index";
+import { LatLng } from "../types/index";
 import { calculatePower, getLinkStation } from "./formulas";
 
-export function output(linkStations: LinkStation[], position: LatLng) {
-  const ls = getLinkStation(linkStations, position);
+export function output(position: LatLng) {
+  const ls = getLinkStation(position);
   if (!ls) {
-    return `No link station within reach for point (${position.join(", ")}).`;
+    console.log(
+      `No link station within reach for point (${position.join(", ")}).`
+    );
+    return;
   }
-  return `Best link station for point (${position.join(
-    ", "
-  )}) is at point (${ls.position.join(", ")}) with power ${calculatePower(
-    ls,
-    position
-  ).toFixed(2)}`;
+  console.log(
+    `Best link station for point (${position.join(
+      ", "
+    )}) is at point (${ls.position.join(", ")}) with power ${calculatePower(
+      ls,
+      position
+    ).toFixed(2)}.`
+  );
+  return;
 }

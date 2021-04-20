@@ -47,7 +47,7 @@ interface LinkStation {
 
 ### Formulas and Outputs
 
-The application utilises two kinds of functions: formulas and outputs. Formulas handle the relationships of the data, thus substituting the server. The output handle the UI rendering logic, which conditionally log strings to the console.
+The application utilises two kinds of functions: formulas and outputs. Formulas handle the relationships of the data, thus substituting the server. The outputs handle the UI rendering logic, which conditionally log strings to the console.
 
 #### Formulas
 

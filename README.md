@@ -67,7 +67,9 @@ Returns a number representing the power of connection between the given link sta
 
 **output**: function(position: LatLng): void
 
-Logs output to the console. There are two options:
+Queries the optimal link station for the given position, and logs the result to the console.
+
+There are two options:
 
 In case there are link stations available:
 
